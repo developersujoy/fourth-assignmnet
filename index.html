@@ -12,6 +12,268 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <header class=" ">
+        <section class="container mx-auto mt-[60px] pb-[30px] border-b-1 border-[#E6E7E9] px-6 ">
+            <h2 class="text-[32px] font-bold pb-5">Job Application Tracker</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[16px] ">
+                <div class="bg-white p-5 rounded-[8px] shadow ">
+                    <h3 class="font-medium text-[14px] pb-2">Total</h3>
+                    <p id="totalCount" class="text-[24px] font-bold ">0</p>
+                </div>
+                <div class="bg-white p-5 rounded shadow">
+                    <h3 class="font-medium text-[14px] pb-2">Interview</h3>
+                    <p id="interviewCount" class="text-[24px] font-bold text-[#10B981]">0</p>
+                </div>
+                <div class="bg-white p-5 rounded shadow">
+                    <h3 class="font-medium text-[14px] pb-2">Rejected</h3>
+                    <p id="rejectedCount" class="text-[24px] font-bold text-[#EF4444]">0</p>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- jobs section designing-->
+    <main class="container mx-auto px-6 pb-6 ">
+        <section class="pt-[30px]">
+            <div class="flex justify-between">
+                <h2 class="text-[20px] font-semibold mb-6">Available Jobs</h2>
+                <p id="tabCount" class="text-gray-500"> 0 jobs</p>
+            </div>
+            <div class="flex gap-2">
+                <button class="bg-[#3B82F6] cursor-pointer px-[32px] py-[10px] rounded-[8px] tabBtn text-white"
+                    data-tab="all">All</button>
+                <button class="bg-gray-200 cursor-pointer p-[10px] rounded-[8px] tabBtn"
+                    data-tab="interview">Interview</button>
+                <button class="bg-gray-200 cursor-pointer p-[10px] rounded-[8px] tabBtn"
+                    data-tab="rejected">Rejected</button>
+            </div>
+            <!-- Emty message -->
+            <div id="emtyMessage" class="hidden text-center py-[60px] px-10 bg-white rounded-[8px] mt-4">
+                <div class="mb-5 flex justify-center"><img src="./jobs.png" alt=""></div>
+                <h3 class="text-[24px] font-semibold ">No jobs available</h3>
+                <p class="text-gray-500">Check back soon for new job opportunities</p>
+            </div>
+        </section>
+        <!-- job listing section -->
+        <section id="jobContainer" class="grid grid-cols-1  gap-4 mt-4">
+            <!-- card - 1 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative" data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">Mobile First Corp</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">React Native Developer</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">Remote • Full-Time • ₹130,000 - ₹175,000 </p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200 ">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Build cross-platform mobile applications using React Native.
+                        Work on products used by millions of users worldwide.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
     
+                    </div>
+                </div>
+            </div>
+            <!-- card -2 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative " data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">WebFlow Agency</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">Web Designer</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">Los Angeles • Full-Time • ₹80,000 - ₹120,000 </p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Create modern and responsive web designs.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
+    
+                    </div>
+                </div>
+            </div>
+            <!-- card - 3 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative" data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">DataViz Solutions</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">Data Visualization Specialist</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">Boston • Full-Time • ₹70,000 - ₹95,000 </p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Build interactive dashboards and reporting tools.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
+    
+                    </div>
+                </div>
+            </div>
+            <!-- card - 4 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative" data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">CloudFirst Inc</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">Backend Developer</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">Seattle • Full-Time • ₹90,000 - ₹130,000 </p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Develop scalable backend systems and APIs.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
+    
+                    </div>
+                </div>
+            </div>
+            <!-- card - 5 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative" data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">Innovation Labs</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">UI/UX Engineer</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">Austin • Full-Time • ₹75,000 - ₹110,000</p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Design user-focused web and mobile interfaces.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
+    
+                    </div>
+                </div>
+            </div>
+            <!-- card - 6 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative" data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">MegaCorp Solutions</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">JavaScript Developer</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">New York • Full-Time • ₹100,000 - ₹150,000 </p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Work on enterprise-level web applications.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
+    
+                    </div>
+                </div>
+            </div>
+            <!-- card - 7 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative" data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">StartupXYZ</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">Full Stack Engineer</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">Remote • Full-Time • ₹120,000 - ₹160,000</p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Develop scalable startup applications.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
+    
+                    </div>
+                </div>
+            </div>
+            <!-- card - 8 -->
+            <div class="jobCard bg-[#FFFFFF] p-6 rounded-[8px] shadow relative" data-status="all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="font-semibold text-[18px]">TechCorp Industries</h4>
+                        <p class="font-normal text-[16px] text-[#64748B]">Senior Frontend Developer</p>
+                    </div>
+                    <div>
+                        <span class="p-2 cursor-pointer rounded-full border-1 border-[#F1F2F4] deleteBtn"><i
+                                class="fa-regular fa-trash-can deleteBtn"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mt-5 text-[#64748B] text-[14px]">San Francisco • Full-Time • ₹110,000 - ₹170,000</p>
+                    <span
+                        class="statusBadge inline-block mt-5 px-2 py-2 px-3 font-medium text-[14px]  rounded-[4px] bg-gray-200">NOT
+                        APPLIED</span>
+                    <p class="font-normal text-[14px] mt-2">Lead frontend team and build scalable UI systems.</p>
+                    <div class="mt-7 flex gap-2">
+                        <button
+                            class="interviewBtn cursor-pointer border-2 font-semibold text-[14px] border-[#10B981] text-[#10B981] px-3 py-2 rounded-[4px]">INTERVIEW</button>
+                        <button
+                            class="rejectBtn cursor-pointer border-2 font-semibold text-[14px] border-[#EF4444] text-[#EF4444] px-3 py-2 rounded-[4px]">REJECTED</button>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </main>
 </body>
 </html>

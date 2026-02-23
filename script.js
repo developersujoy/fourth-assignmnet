@@ -90,3 +90,9 @@ document.addEventListener("click", function (e) {
         emtyMessage.classList.add("hidden");
     }
 });
+
+window.addEventListener("load", function (evt) {
+    let cards = this.document.querySelectorAll(".jobCard");
+    totalCount.innerText = cards.length;
+    tabCount.innerText = cards.length + " jobs";
+});

@@ -4,7 +4,7 @@ A dynamic web application built to help users track and manage their job applica
 
 ## 🚀 Live Demo
 
-https://developersujoy.github.io/fourth-assignmnet/
+https://developersujoy.github.io/job-application-tracker
 
 ## 📌 Project Overview
 
